@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+
+body {
+    font-family: Arial;
+    font-size: 100%;
+    height: 100vh;
+}
+
+.container {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.avatar {
+    border: none;
+    text-align: center;
+    height: 85%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+
+
+.m-form {
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    height: 10%;
+}
+
+.m-input {
+    width: 100%;
+    padding: 5px;
+    height: 44px;
+    outline: none;
+    border: 2px solid rgb(118, 183, 176);
+}
+
+
+.m-but {
+    position: absolute;
+    line-height: 100%;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    height: 44px;
+    outline: none;
+    color: #fff;
+    background:  rgb(118, 183, 176);
+    width: 20%;
+}
+
+.m-but:active, .m-but:hover {
+    background: rgb(61, 174, 183);
+}

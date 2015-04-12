@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="avatar">
+    <p class="flash"></p>
+</div>
+<div class="m-form">
+    <form>
+        <input class="m-input" type="number" name="sno" placeholder="请输入要查找的学号" value="{{ request.form.sno }}" />
+        <input class="m-but" type="submit" value="查找">
+    </form>
+</div>
+
+{% endblock %}
