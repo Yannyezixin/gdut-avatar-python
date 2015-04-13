@@ -25,8 +25,8 @@ def search():
             if not status:
                 return jsonify(status = "error", message = "查不到该信息")
             else:
-                imgUrl = url_for('static', filename= "img/" + sno + ".jpg")
+                imgUrl = url_for('static', filename= "avatar/" + sno + ".jpg")
         else:
-            imgUrl = url_for('static', filename="img/" + sno + ".jpg")
+            imgUrl = url_for('static', filename="avatar/" + sno + ".jpg")
 
     return jsonify(status = "success", imgUrl = imgUrl)
