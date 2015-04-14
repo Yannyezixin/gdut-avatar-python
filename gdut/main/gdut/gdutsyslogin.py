@@ -1,5 +1,5 @@
-#coding:utf-8
-#!/usr/bin/python2.7
+# coding:utf-8
+# !/usr/bin/python2.7
 
 """登录GDUT学生工作管理系统
 
@@ -13,6 +13,7 @@ import urllib2
 import urllib
 import cookielib
 import re
+
 
 class login(object):
     """登录GDUT学生工作信息管理系统
@@ -33,7 +34,7 @@ class login(object):
         self.name = username
         self.password = password
         self.html = self.getHtml(self.loginUrl)
-        if self.html != None:
+        if self.html is not None:
             self.result = self.login(self.html)
         else:
             self.result = None
@@ -53,7 +54,7 @@ class login(object):
             req = urllib2.Request(url)
             html = urllib2.urlopen(req).read()
             return html
-        except urllib2.URLError, e:
+        except urllib2.URLError:
             return None
 
     def getExtraPostData(self, html):
@@ -84,12 +85,13 @@ class login(object):
         cookie = cookielib.CookieJar()
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
         headers = {
-                    'POST': 'http://gdut.eswis.cn/default.aspx',
-                    'Host': 'gdut.eswis.cn',
-                    'Referer': 'http://eswis.gdut.edu.cn/',
-                    'Cookie': 'ASP.NET_SessionId=v2aba03ra5j3dvrrmo2dnq45',
-                    'User-Agent':'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'
-                    }
+            'POST': 'http://gdut.eswis.cn/default.aspx',
+            'Host': 'gdut.eswis.cn',
+            'Referer': 'http://eswis.gdut.edu.cn/',
+            'Cookie': 'ASP.NET_SessionId=v2aba03ra5j3dvrrmo2dnq45',
+            'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; \
+            rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'
+        }
         postdata = urllib.urlencode({
             '__EVENTTARGET': '',
             '__EVENTARGUMENT': '',
@@ -101,14 +103,13 @@ class login(object):
             '__PREVIOUSPAGE': hiddenPostData[2],
             '__EVENTVALIDATION': hiddenPostData[3]
             })
-        req = urllib2.Request(
-            url = self.loginUrl,
-            data = postdata,
-            headers = headers
-            )
+        req = urllib2.Request(url=self.loginUrl,
+                              data=postdata,
+                              headers=headers
+                              )
 
         try:
             result = opener.open(req).read()
             return result
-        except urllib2.URLError, e:
+        except urllib2.URLError:
             return None

@@ -3,6 +3,7 @@
 import os
 import fnmatch
 
+
 def isValidSno(sno):
     """
     学号格式:男: 31 13 00 0001
@@ -25,6 +26,7 @@ def isValidSno(sno):
         return False
 
     return True
+
 
 def hasAvatar(imgpath, sno):
     for img in os.listdir(imgpath):

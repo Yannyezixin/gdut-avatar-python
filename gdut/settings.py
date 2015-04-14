@@ -1,4 +1,5 @@
-#coding: utf-8
+# coding: utf-8
+
 import os
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
